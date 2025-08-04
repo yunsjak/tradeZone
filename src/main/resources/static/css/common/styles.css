@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+	font-family: sans-serif;
+  	margin: 0;
+  	padding: 0;	
+  	height: 100%;
+}
+
+html {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 350px;
+}
+
+.wrapper {
+	height: 100vh;
+}
+
+.content {
+	flex: 1;
+	margin: 15px auto;
+}

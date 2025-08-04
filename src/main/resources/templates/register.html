@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+	<meta charset="UTF-8">
+	<title>상품 상세화면</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/page/register.css}">
+</head>
+<body>
+	<div class="content">
+		<div layout:fragment="content" class="wrapper">
+			<div class="container main">
+				<h2>상품 정보</h2>
+				<table>
+					<tr class="form-group">
+						<td><label for="name">상품명</label></td>
+						<td><input type="text" id="name" placeholder="상품명을 입력해주세요."></td>
+					</tr>
+					
+					<tr class="form-group">
+						<td><label for="description">상세설명</label></td>
+						<td><textarea id="description" placeholder="전화번호, SNS계정 등 개인정보 입력은 제한될 수 있습니다. 
+상품 상태, 수량, 구매시기, 하자 유무 자세히 작성해주세요."></textarea></td>
+					</tr>
+					
+					<tr class="form-group">
+						<td><label for="image">상품이미지</label></td>
+						<td colspan="2">
+							<div class="image-upload-box">이미지 등록</div>
+						    <input type="file" id="image">
+						    <p style="font-size: 12px; color: #888;">이미지를 1장 이상 업로드 해주세요.</p>
+						</td>
+					</tr>
+					
+					<tr class="form-group">
+						<td><label for="price">상품가격</label></td>
+						<td><input type="text" id="price-input" placeholder="상품가격을 입력해주세요."> 원<td>
+					</tr>
+					
+					<tr class="form-group">
+						<td><label>지역</label></td>
+						<td>
+							<div class="region-select">
+								<select>
+									<option>시</option>
+								</select>
+								<select>
+									<option>구</option>
+								</select>
+								<select>
+									<option>동</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					
+					<tr class="form-group">
+						<td><label>카테고리</label></td>
+						<td>
+							<div class="category-select">
+								<select>
+									<option>선택</option>
+									<option>유니폼</option>
+									<option>모자</option>
+									<option>의류</option>
+									<option>잡화</option>
+									<option>응원용품 (응원 배트, 머리띠, 슬로건, 짝짝이)</option>
+									<option>야구용품 (야구공, 글러브)</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="submit-btn">
+					<button type="submit">등록하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
