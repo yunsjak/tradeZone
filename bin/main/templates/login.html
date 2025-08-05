@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>로그인</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/page/login.css}">
+</head>
+<body>
+    <div class="login-container">
+		<h1 class="logo">tradeZone</h1>
+		<p class="slogan">EVERY GREAT DEAL STARTS WITH A TRADE</p>
+	
+		<form class="login-form">
+			<label for="email">이메일 주소</label>
+			<input type="email" id="email" placeholder="tradeZone@example.com" required />
+	
+			<label for="password">비밀번호</label>
+	    	<input type="password" id="password" required />
+	
+	    	<button type="submit" class="login-button">로그인</button>
+
+			<div class="links">
+		  		<a href="#">회원가입</a>
+		  	</div>
+		</form>
+	</div>
+</body>
+</html>

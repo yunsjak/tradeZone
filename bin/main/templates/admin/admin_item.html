@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html layout:decorate="~{admin/common}">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/admin/admin_list.css}" />
+</head>
+<body>
+<div layout:fragment="content">
+	<h1>상품 관리</h1>
+	<div class="container-2">
+        <table>
+            <thead>
+                <tr>
+                    <th>상품 코드</th>
+                    <th>상품명</th>
+                    <th>상품가격</th>
+                    <th>진행 상태</th>
+                    <th>등록일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P001</td>
+                    <td>KIA 타이거즈 레플리카 홈 유니폼</td>
+                    <td>69,000원</td>
+                    <td>판매중</td>
+                    <td>2025-07-27</td>
+                </tr>
+          		<tr>
+                  	<td>P001</td>
+                    <td>KIA 타이거즈 레플리카 홈 유니폼</td>
+                    <td>69,000원</td>
+                    <td>판매중</td>
+                    <td>2025-07-27</td>
+                </tr>
+                <tr>
+                    <td>P001</td>
+                    <td>KIA 타이거즈 레플리카 홈 유니폼</td>
+                    <td>69,000원</td>
+                    <td>판매중</td>
+                    <td>2025-07-27</td>
+                </tr>
+                <tr>
+                    <td>P001</td>
+                    <td>KIA 타이거즈 레플리카 홈 유니폼</td>
+                    <td>69,000원</td>
+                    <td>판매완료</td>
+                    <td>2025-07-27</td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+	<div class="pagination">
+        <div class="pagination-button">
+            <button>previous</button>
+            <button>1</button>
+            <button>next</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

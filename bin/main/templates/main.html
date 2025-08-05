@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/page/main.css}" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script th:src="@{/js/main.js}"></script>
+
+	<style>
+		.slider-container {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+		
+		.slick-slide {
+			padding: 0 10px;
+		}
+		.card {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="main" layout:fragment="content">
+			<div class="banner"><a href="/notice.html"><img src="/images/banner.png" alt="" /></a></div>
+			
+			<section class="py-5 slider-container">
+				<p class="subject">최근 등록된 상품</p>
+				<div class="container px-4 px-lg-5 mt-5">
+					<div class="product-slider">
+						<div class="col mb-5">
+							<div class="card h-100">
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mb-5">
+							<div class="card h-100">
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mb-5">
+							<div class="card h-100">
+								<!-- 거래완료 뱃지 예시 -->
+								<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">거래완료</div>
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mb-5">
+							<div class="card h-100">
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mb-5">
+							<div class="card h-100">
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mb-5">
+							<div class="card h-100">
+								<img class="card-img-top" src="/images/uniform.jpg" alt="" />
+								<div class="card-body p-4">
+									<div class="text-center">
+										<h5 class="fw-bolder">KIA 타이거즈 레플리카 홈 유니폼</h5>
+										69,000원
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script layout:fragment="script" type="text/javascript">
+		$(document).ready(function(){
+			$('.product-slider').slick({
+				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				centerMode: false,
+				arrows: true,
+				dots: true,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+		});
+	</script>
+</body>
+</html>

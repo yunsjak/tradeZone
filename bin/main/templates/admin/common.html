@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/admin/sidebar.css}" />
+	<title>Admin</title>
+</head>
+<body>
+	<div class="navbar">
+		<div class="logo">tradeZone</div>
+		<div class="nav-links">
+			<a href="#">관리자</a>
+			<a href="#">로그아웃</a>
+			<a href="#">마이 페이지</a>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="sidebar">
+			<a href="#member" class="active" onclick="setActive(this)">회원관리</a>
+			<a href="#product" onclick="setActive(this)">상품관리</a>
+			<a href="#comment" onclick="setActive(this)">댓글관리</a>
+		</div>
+		<main>
+			<th:block layout:fragment="content"></th:block>
+		</main>
+	</div>
+	<script>
+		function setActive(el) {
+			const links = document.querySelectorAll('.sidebar a');
+			links.forEach(link => link.classList.remove('active'));
+			el.classList.add('active');
+		}
+	</script>
+</body>
+</html>
