@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/page/user.css}">
+	<script th:src="@{/js/user.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	
+	<style>
+		.slider-wrapper {
+			position: relative;
+			margin-top: 20px;
+			padding: 0 40px;
+			border-top: 1px solid #ccc;
+		}
+		
+		.custom-arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: #fff;
+			border: none;
+			width: 36px;
+			height: 36px;
+			font-size: 20px;
+			z-index: 10;
+			cursor: pointer;
+		}
+		
+		.custom-prev { left: 0; }
+		.custom-next { right: 0; }
+		
+		.wish-prev { left: 0; }
+		.wish-next { right: 0; }
+		
+		.product-list {
+			display: flex;
+		}
+		
+		.product-card {
+			margin: 10px 10px;
+			transition: 0.3s;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div layout:fragment="content" class="wrapper">
+			<div class="mypage-section">
+				<h2>회원정보</h2>
+				<div class="form-box">
+					<form>
+						<label>이메일</label>
+						<input type="email" value="test@example.com" disabled>
+						<label>비밀번호</label>
+						<input type="password" placeholder="새 비밀번호 입력">
+						<label>전화번호</label>
+						<input type="text" value="010-1234-5678">
+						<label>닉네임</label>
+						<div class="nickname-box">
+							<input type="text" id="usernameInput" value="닉네임123">
+							<button type="button" class="check-btn" id="checkDuplicateBtn">중복확인</button>
+						</div>
+						<div class="save-wrapper">
+							<button type="submit" class="save-btn">저장하기</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		
+			<div class="mypage-tabs">
+				<button class="tab-button active" onclick="showTab('product')">상품 <span>8</span></button>
+				<button class="tab-button" onclick="showTab('wish')">찜 <span>4</span></button>
+				<button class="tab-button" onclick="showTab('review')">후기 <span>4</span></button>
+			</div>
+		
+		<!-- 상품 목록 -->
+			<div id="productList" class="product-section">
+				<div class="product">상품 <span class="product-count">8</span></div>
+				<div class="slider-wrapper">
+				    <button type="button" class="slick-prev custom-arrow custom-prev">&#10094;</button>
+					
+					<div class="product-list product-slider">
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품A</div>
+							<div class="product-price">10,000원</div>
+							<div class="product-time">방금 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품B</div>
+							<div class="product-price">15,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품C</div>
+							<div class="product-price">20,000원</div>
+							<div class="product-time">2시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품D</div>
+							<div class="product-price">25,000원</div>
+							<div class="product-time">2시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품A</div>
+							<div class="product-price">10,000원</div>
+							<div class="product-time">방금 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품B</div>
+							<div class="product-price">15,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품C</div>
+							<div class="product-price">20,000원</div>
+							<div class="product-time">2시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="상품 이미지">
+							<div class="product-title">상품D</div>
+							<div class="product-price">25,000원</div>
+							<div class="product-time">2시간 전</div>
+						</div>
+					</div>
+					<button type="button" class="slick-next custom-arrow custom-next">&#10095;</button>
+  				</div>
+			</div>
+		
+		<!-- 찜 목록 -->
+			<div id="wishList" class="product-section" style="display: none;">
+				<div class="product">찜 <span class="product-count">4</span></div>
+				<div class="slider-wrapper">
+				    <button type="button" class="slick-prev custom-arrow wish-prev">&#10094;</button>
+						
+					<div class="product-list wish-slider">
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="찜 이미지">
+							<div class="product-title">찜상품A</div>
+							<div class="product-price">9,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="찜 이미지">
+							<div class="product-title">찜상품B</div>
+							<div class="product-price">10,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="찜 이미지">
+							<div class="product-title">찜상품C</div>
+							<div class="product-price">12,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+						<div class="product-card">
+							<img src="https://via.placeholder.com/150" alt="찜 이미지">
+							<div class="product-title">찜상품D</div>
+							<div class="product-price">30,000원</div>
+							<div class="product-time">1시간 전</div>
+						</div>
+					</div>
+					<button type="button" class="slick-next custom-arrow wish-next">&#10095;</button>
+  				</div>
+			</div>
+		
+		<!-- 후기 목록 -->
+			<div id="reviewList" class="product-section" style="display: none;">
+				<div class="product">후기 <span class="product-count">4</span></div>
+				<div class="review-table-box">
+					<table class="review-table">
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>상품명</th>
+								<th>내용</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>상품A</td>
+								<td>좋아요!</td>
+								<td>2025-07-28</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>상품A</td>
+								<td>좋아요!</td>
+								<td>2025-07-28</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>상품A</td>
+								<td>좋아요!</td>
+								<td>2025-07-28</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>상품A</td>
+								<td>좋아요!</td>
+								<td>2025-07-28</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="pagination">
+					<div class="pagination-button">
+						<button>previous</button>
+						<button>1</button>
+						<button>next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script layout:fragment="script" type="text/javascript">
+	$(document).ready(function () {
+		  initSlider('.product-slider', '.custom-prev', '.custom-next');
+
+		  function initSlider(selector, prevBtn, nextBtn) {
+		    if (!$(selector).hasClass('slick-initialized')) {
+		      $(selector).slick({
+		        slidesToShow: 3,
+		        slidesToScroll: 1,
+		        arrows: true,
+		        infinite: false,
+		        prevArrow: $(prevBtn),
+		        nextArrow: $(nextBtn),
+		        responsive: [
+		          { breakpoint: 768, settings: { slidesToShow: 2 } },
+		          { breakpoint: 480, settings: { slidesToShow: 1 } }
+		        ]
+		      });
+		    }
+		  }
+
+		  window.showTab = function (tabName) {
+		    $('.product-section').hide();
+		    $('.tab-button').removeClass('active');
+
+		    if (tabName === 'product') {
+		      $('#productList').show();
+		      initSlider('.product-slider', '.custom-prev', '.custom-next');
+		    } else if (tabName === 'wish') {
+		      $('#wishList').show();
+		      initSlider('.wish-slider', '.wish-prev', '.wish-next');
+		    } else if (tabName === 'review') {
+		      $('#reviewList').show();
+		    }
+
+		    $('button[onclick*="' + tabName + '"]').addClass('active');
+		  };
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html layout:decorate="~{admin/common}">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/admin/admin_list.css}" />
+</head>
+<body>
+<div layout:fragment="content">
+	<h1>댓글 관리</h1>
+	<div class="container-2">
+        <table>
+            <thead>
+                <tr>
+                    <th>글 번호</th>
+                    <th>닉네임(이름)</th>
+                    <th>내용</th>
+                    <th>등록일</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>사용자</td>
+                    <td>댓글 내용입니다.</td>
+                    <td>2025-07-27</td>
+                    <td>
+	       				<button class="delete-button">삭제하기</button>
+                    </td>
+                </tr>
+          		<tr>
+                    <td>2</td>
+                    <td>사용자</td>
+                    <td>댓글 내용입니다.</td>
+                    <td>2025-07-27</td>
+                  	<td class="delete">
+	       				<button class="delete-button">삭제하기</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>사용자</td>
+                    <td>댓글 내용입니다.</td>
+                    <td>2025-07-27</td>
+                    <td class="delete">
+	       				<button class="delete-button">삭제하기</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>사용자</td>
+					<td>댓글 내용입니다.</td>
+                    <td>2025-07-27</td>
+                    <td class="delete">
+	       				<button class="delete-button">삭제하기</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+	<div class="pagination">
+        <div class="pagination-button">
+            <button>previous</button>
+            <button>1</button>
+            <button>next</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

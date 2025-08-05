@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html layout:decorate="~{admin/common}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/admin/user_form.css}" />
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="admin-user">
+			<h2>회원 정보</h2>
+			<div class="form-box">
+				<form>
+					<label>이메일</label>
+					<input type="email" value="test@example.com" disabled>
+					<label>비밀번호</label>
+					<input type="text" value="1234">
+					<label>전화번호</label>
+					<input type="text" value="010-1234-5678">
+					<label>닉네임</label>
+					<div class="nickname-box">
+						<input type="text" id="usernameInput" value="닉네임123">
+						<button type="button" class="check-btn" id="checkDuplicateBtn">중복확인</button>
+					</div>
+					<div class="submit-btn">
+						<button type="submit">수정하기</button>
+						<button>삭제하기</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
